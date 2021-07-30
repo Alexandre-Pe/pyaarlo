@@ -15,6 +15,9 @@ class ArloBackgroundWorker(threading.Thread):
         self._id += 1
         return str(self._id) + ":" + str(time.monotonic())
 
+    def stop(self):
+        exit()
+
     def _run_next(self):
 
         # timeout in the future
