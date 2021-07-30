@@ -99,7 +99,6 @@ class ArloBackgroundWorker(threading.Thread):
     def stop(self):
         self._stopThread = True
         print("Stop bg")
-        self._lock.notify_all()
 
 
 class ArloBackground:
