@@ -331,6 +331,8 @@ class ArloBackEnd(object):
 
         # for event in stream.events():
         for event in stream:
+            if self._stop == True:
+                break
 
             # stopped?
             if event is None:
