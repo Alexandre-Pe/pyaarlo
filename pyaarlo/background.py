@@ -67,6 +67,7 @@ class ArloBackgroundWorker(threading.Thread):
                 timeout = None
                 while timeout is None:
                     if self._stop == True:
+                        timeout = 0
                         break
                     timeout = self._run_next()
 

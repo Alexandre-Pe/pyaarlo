@@ -331,8 +331,6 @@ class ArloBackEnd(object):
 
         # for event in stream.events():
         for event in stream:
-            if self._stop == True:
-                break
 
             # stopped?
             if event is None:
@@ -769,6 +767,7 @@ class ArloBackEnd(object):
         self._arlo.debug("trying to logout")
         if self._ev_stream is not None:
             self._ev_stream.stop()
+        self._ev_stop()
         self.put(LOGOUT_PATH)
 
     def notify(self, base, body, timeout=None, wait_for=None):
